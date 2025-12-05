@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-vault-shuffle"
+version = "0.1.0"
+description = "CLI tool to copy AWS Backup recovery points between AWS accounts at scale"
+authors = [{name = "John Ayers"}]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3~=1.35",
+    "botocore~=1.35",
+    "pyyaml~=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest~=8.0",
+    "pytest-cov~=4.1",
+    "pytest-mock~=3.12",
+    "black~=24.0",
+    "ruff~=0.6",
+    "mypy~=1.11",
+    "types-pyyaml~=6.0",
+]
+
+[project.scripts]
+aws-vault-shuffle = "aws_vault_shuffle.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --strict-markers"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

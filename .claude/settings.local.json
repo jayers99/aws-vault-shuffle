@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(cd:*)",
+      "Bash(cd /Users/jayers/Library/Mobile\\ Documents/com~apple~CloudDocs/code/aws-vault-shuffle && pipenv run pytest:*)",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

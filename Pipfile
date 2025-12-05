@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+boto3 = "~=1.35"
+botocore = "~=1.35"
+pyyaml = "~=6.0"
+aws-vault-shuffle = {file = ".", editable = true}
+
+[dev-packages]
+pytest = "~=8.0"
+pytest-cov = "~=4.1"
+pytest-mock = "~=3.12"
+black = "~=24.0"
+ruff = "~=0.6"
+mypy = "~=1.11"
+types-pyyaml = "~=6.0"
+
+[requires]
+python_version = "3.12"

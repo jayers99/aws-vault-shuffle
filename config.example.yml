@@ -1,0 +1,27 @@
+# aws-vault-shuffle configuration example
+# Copy this to config.yml and customize for your environment
+
+# Source AWS account number (12-digit account ID)
+source_account: "123456789012"
+
+# List of AWS regions to scan for backup vaults
+regions:
+  - us-east-1
+  - us-west-2
+  - eu-west-1
+
+# Optional: IAM role to assume for cross-account access
+# If not specified, uses current AWS credentials
+# assume_role_arn: "arn:aws:iam::123456789012:role/BackupReader"
+
+# Optional: External ID for role assumption (if required by IAM policy)
+# external_id: "unique-external-id"
+
+# Optional: Session name for assumed role
+# session_name: "aws-vault-shuffle"
+
+# Optional: Output format (json, table, summary)
+# output_format: "table"
+
+# Optional: Log level (DEBUG, INFO, WARNING, ERROR)
+# log_level: "INFO"
