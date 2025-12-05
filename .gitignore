@@ -211,3 +211,4 @@ config.yml
 config.yaml
 *.local.yml
 .DS_Store
+.claude/
