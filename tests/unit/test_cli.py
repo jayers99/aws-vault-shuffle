@@ -110,9 +110,10 @@ class TestCLIMain:
             "--regions", "us-east-1,us-west-2",
         ])
 
-        # Currently returns 0 with placeholder message
+        # Should complete successfully
         assert exit_code == 0
 
         captured = capsys.readouterr()
         assert "123456789012" in captured.out
-        assert "us-east-1,us-west-2" in captured.out
+        assert "us-east-1" in captured.out
+        assert "us-west-2" in captured.out
